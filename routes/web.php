@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
+// models
+use App\Models\Train;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $trains = Train::all();
+
+    dd($trains);
+
     return view('welcome');
 });
