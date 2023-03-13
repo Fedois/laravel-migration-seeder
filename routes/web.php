@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 // models
 use App\Models\Train;
 
+// controller
+use App\Http\Controllers\Guest\PageController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +20,4 @@ use App\Models\Train;
 |
 */
 
-Route::get('/', function () {
-    $trains = Train::all();
-    return view('welcome', [
-        'trains' => $trains
-    ]);
-});
+Route::get('/', [PageController::class, 'index']);
